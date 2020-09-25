@@ -24,7 +24,16 @@ maven_install(
     artifacts = [
         "commons-codec:commons-codec:jar:1.14",
         "javax.xml.bind:jaxb-api:2.3.1",
+        "log4j:log4j:1.2.17",
+        "org.slf4j:jcl-over-slf4j:1.7.30",
+        "org.slf4j:log4j-over-slf4j:1.7.30",
+        "org.slf4j:slf4j-jdk14:1.7.30",
         "org.slf4j:slf4j-simple:1.7.30",
+        maven.artifact(
+            "org.apache.httpcomponents",
+            "httpclient",
+            "4.5.12",
+        ),
         maven.artifact(
             "junit",
             "junit",
@@ -57,6 +66,11 @@ maven_install(
         "https://maven.google.com",
         "https://repo1.maven.org/maven2",
     ],
+    override_targets = {
+        "commons-logging:commons-logging": "@maven//:org_slf4j_jcl_over_slf4j",
+        "log4j:log4j": "@maven//:org_slf4j_log4j_over_slf4j",
+        "org.hamcrest:hamcrest-core": "@maven//:org_hamcrest_hamcrest",
+    }
 )
 
 load("@maven//:defs.bzl", "pinned_maven_install")
