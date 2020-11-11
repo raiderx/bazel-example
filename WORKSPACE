@@ -80,19 +80,19 @@ pinned_maven_install()
 # Java tools javac14
 http_archive(
     name = "remote_java_tools_linux",
-    sha256 = "196128eadc68a55fb42a1f990c84ee816f5b29320a72fe542fcfc4206ac3978a",
+    sha256 = "ed18ff30d6fff6cff341f2153204cbd19b5cbe2a693351c96651d3dd2b6bf0b3",
     urls = [
-        "https://mirror.bazel.build/bazel_java_tools/releases/javac14/v1.0/java_tools_javac14_linux-v1.0.zip",
-        "https://github.com/bazelbuild/java_tools/releases/download/javac14-v1.0/java_tools_javac14_linux-v1.0.zip",
+        "https://mirror.bazel.build/bazel_java_tools/releases/javac14/v2.0/java_tools_javac14_linux-v2.0.zip",
+        "https://github.com/bazelbuild/java_tools/releases/download/javac14_v2.0/java_tools_javac14_linux-v2.0.zip",
     ],
 )
 
 http_archive(
     name = "remote_java_tools_darwin",
-    sha256 = "e20f002ceb3f3353d64c022e1f3400d8539ee56ffcfd4a6680d73d6a2cac938b",
+    sha256 = "ceebee0618e838a0aa904f010e382a407e4ef6302d5d35c803e77b29612c3224",
     urls = [
-        "https://mirror.bazel.build/bazel_java_tools/releases/javac14/v1.0/java_tools_javac14_darwin-v1.0.zip",
-        "https://github.com/bazelbuild/java_tools/releases/download/javac14-v1.0/java_tools_javac14_darwin-v1.0.zip",
+        "https://mirror.bazel.build/bazel_java_tools/releases/javac14/v2.0/java_tools_javac14_darwin-v2.0.zip",
+        "https://github.com/bazelbuild/java_tools/releases/download/javac14_v2.0/java_tools_javac14_darwin-v2.0.zip",
     ],
 )
 
