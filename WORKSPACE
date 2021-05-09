@@ -4,9 +4,8 @@
 
 load("@bazel_tools//tools/build_defs/repo:http.bzl", "http_archive")
 
-RULES_JVM_EXTERNAL_TAG = "3.3"
-
-RULES_JVM_EXTERNAL_SHA = "d85951a92c0908c80bd8551002d66cb23c3434409c814179c0ff026b53544dab"
+RULES_JVM_EXTERNAL_TAG = "4.0"
+RULES_JVM_EXTERNAL_SHA = "31701ad93dbfe544d597dbe62c9a1fdd76d81d8a9150c2bf1ecf928ecdf97169"
 
 http_archive(
     name = "rules_jvm_external",
@@ -77,44 +76,44 @@ load("@maven//:defs.bzl", "pinned_maven_install")
 
 pinned_maven_install()
 
-# Java tools javac14
+# Java tools javac11 v10.6
 http_archive(
     name = "remote_java_tools_linux",
-    sha256 = "ed18ff30d6fff6cff341f2153204cbd19b5cbe2a693351c96651d3dd2b6bf0b3",
+    sha256 = "085c0ba53ba764e81d4c195524f3c596085cbf9cdc01dd8e6d2ae677e726af35",
     urls = [
-        "https://mirror.bazel.build/bazel_java_tools/releases/javac14/v2.0/java_tools_javac14_linux-v2.0.zip",
-        "https://github.com/bazelbuild/java_tools/releases/download/javac14_v2.0/java_tools_javac14_linux-v2.0.zip",
+        "https://mirror.bazel.build/bazel_java_tools/releases/javac11/v10.6/java_tools_javac11_linux-v10.6.zip",
+        "https://github.com/bazelbuild/java_tools/releases/download/javac11_v10.6/java_tools_javac11_linux-v10.6.zip",
     ],
 )
 
 http_archive(
     name = "remote_java_tools_darwin",
-    sha256 = "ceebee0618e838a0aa904f010e382a407e4ef6302d5d35c803e77b29612c3224",
+    sha256 = "d15b05d2061382748f779dc566537ea567a46bcba6fa34b56d7cb6e6d668adab",
     urls = [
-        "https://mirror.bazel.build/bazel_java_tools/releases/javac14/v2.0/java_tools_javac14_darwin-v2.0.zip",
-        "https://github.com/bazelbuild/java_tools/releases/download/javac14_v2.0/java_tools_javac14_darwin-v2.0.zip",
+        "https://mirror.bazel.build/bazel_java_tools/releases/javac11/v10.6/java_tools_javac11_darwin-v10.6.zip",
+        "https://github.com/bazelbuild/java_tools/releases/download/javac11_v10.6/java_tools_javac11_darwin-v10.6.zip",
     ],
 )
 
 # Zulu OpenJDK
 http_archive(
-    name = "openjdk14_linux_archive",
+    name = "openjdk15_linux_archive",
     build_file_content = """
 java_runtime(name = 'runtime', srcs =  glob(['**']), visibility = ['//visibility:public'])
 exports_files(["WORKSPACE"], visibility = ["//visibility:public"])
 """,
-    sha256 = "7f4310a98ea0e52bacbec389012d859dbb51e759fe35a2cfebb11300271872d2",
-    strip_prefix = "zulu14.29.23-ca-jdk14.0.2-linux_x64",
-    urls = ["https://cdn.azul.com/zulu/bin/zulu14.29.23-ca-jdk14.0.2-linux_x64.tar.gz"],
+    sha256 = "0f52b2d057d388ec7d659fc52e5d58634c39e05d511f48af650671adba9ca334",
+    strip_prefix = "zulu15.32.15-ca-jdk15.0.3-linux_x64",
+    urls = ["https://cdn.azul.com/zulu/bin/zulu15.32.15-ca-jdk15.0.3-linux_x64.tar.gz"],
 )
 
 http_archive(
-    name = "openjdk14_darwin_archive",
+    name = "openjdk15_darwin_archive",
     build_file_content = """
 java_runtime(name = 'runtime', srcs =  glob(['**']), visibility = ['//visibility:public'])
 exports_files(["WORKSPACE"], visibility = ["//visibility:public"])
 """,
-    sha256 = "8f15f435c3e8d8a4bb1de441b1d7601fe64e1bafdcf0862e2962ae429ea9e6b2",
-    strip_prefix = "zulu14.29.23-ca-jdk14.0.2-macosx_x64",
-    urls = ["https://cdn.azul.com/zulu/bin/zulu14.29.23-ca-jdk14.0.2-macosx_x64.tar.gz"],
+    sha256 = "87df2e9adc1e27c2ffe9a1f8b88d0ba3eeb4cc81c77fc6a3a02788e22484d07b",
+    strip_prefix = "zulu15.32.15-ca-jdk15.0.3-macosx_x64",
+    urls = ["https://cdn.azul.com/zulu/bin/zulu15.32.15-ca-jdk15.0.3-macosx_x64.tar.gz"],
 )

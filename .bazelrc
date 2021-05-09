@@ -1,15 +1,11 @@
 common --enable_platform_specific_config
-#build:jdk14 --define=ABSOLUTE_JAVABASE=/Library/Java/JavaVirtualMachines/jdk-14.0.2.jdk/Contents/Home
-#build:jdk14 --javabase=@bazel_tools//tools/jdk:absolute_javabase
-#build:jdk14 --host_javabase=@bazel_tools//tools/jdk:absolute_javabase
-#build:jdk14 --java_toolchain=@bazel_tools//tools/jdk:toolchain_vanilla
-#build:jdk14 --host_java_toolchain=@bazel_tools//tools/jdk:toolchain_vanilla
-#build --config=jdk14
-build:linux --java_toolchain=@remote_java_tools_linux//:toolchain_jdk_14
-build:linux --host_java_toolchain=@remote_java_tools_linux//:toolchain_jdk_14
-build:linux --javabase=@openjdk14_linux_archive//:runtime
-build:linux --host_javabase=@openjdk14_linux_archive//:runtime
-build:macos --java_toolchain=@remote_java_tools_darwin//:toolchain_jdk_14
-build:macos --host_java_toolchain=@remote_java_tools_darwin//:toolchain_jdk_14
-build:macos --javabase=@openjdk14_darwin_archive//:runtime
-build:macos --host_javabase=@openjdk14_darwin_archive//:runtime
+
+build:linux --java_toolchain=@remote_java_tools_linux//:toolchain_jdk_15
+build:linux --host_java_toolchain=@remote_java_tools_linux//:toolchain_jdk_15
+build:linux --javabase=@openjdk15_linux_archive//:runtime
+build:linux --host_javabase=@openjdk15_linux_archive//:runtime
+
+build:macos --java_toolchain=@remote_java_tools_darwin//:toolchain_jdk_15
+build:macos --host_java_toolchain=@remote_java_tools_darwin//:toolchain_jdk_15
+build:macos --javabase=@openjdk15_darwin_archive//:runtime
+build:macos --host_javabase=@openjdk15_darwin_archive//:runtime
