@@ -89,3 +89,16 @@ java_test(
         "@maven//:org_slf4j_slf4j_simple",
     ]
 )
+
+load(
+    "@bazel_tools//tools/jdk:default_java_toolchain.bzl",
+    "default_java_toolchain",
+)
+default_java_toolchain(
+    name = "toolchain_java17",
+    forcibly_disable_header_compilation = True,
+    javabuilder = ["@bazel_tools//tools/jdk:vanillajavabuilder"],
+    jvm_opts = [],
+    source_version = "17",
+    target_version = "17",
+)

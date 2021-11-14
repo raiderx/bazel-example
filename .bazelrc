@@ -1,11 +1,10 @@
 common --enable_platform_specific_config
 
-build:linux --java_toolchain=@remote_java_tools_linux//:toolchain_jdk_15
-build:linux --host_java_toolchain=@remote_java_tools_linux//:toolchain_jdk_15
-build:linux --javabase=@openjdk15_linux_archive//:runtime
-build:linux --host_javabase=@openjdk15_linux_archive//:runtime
+build --java_toolchain=//:toolchain_java17
+build --host_java_toolchain=//:toolchain_java17
 
-build:macos --java_toolchain=@remote_java_tools_darwin//:toolchain_jdk_15
-build:macos --host_java_toolchain=@remote_java_tools_darwin//:toolchain_jdk_15
-build:macos --javabase=@openjdk15_darwin_archive//:runtime
-build:macos --host_javabase=@openjdk15_darwin_archive//:runtime
+build:linux --javabase=@openjdk17_linux_archive//:runtime
+build:linux --host_javabase=@openjdk17_linux_archive//:runtime
+
+build:macos --javabase=@openjdk17_darwin_archive//:runtime
+build:macos --host_javabase=@openjdk17_darwin_archive//:runtime

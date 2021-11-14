@@ -76,44 +76,44 @@ load("@maven//:defs.bzl", "pinned_maven_install")
 
 pinned_maven_install()
 
-# Java tools javac11 v10.6
+# Java tools javac11 v10.7
 http_archive(
     name = "remote_java_tools_linux",
-    sha256 = "085c0ba53ba764e81d4c195524f3c596085cbf9cdc01dd8e6d2ae677e726af35",
+    sha256 = "cf57fc238ed5c24c718436ab4178ade5eb838fe56e7c32c4fafe0b6fbdaec51f",
     urls = [
-        "https://mirror.bazel.build/bazel_java_tools/releases/javac11/v10.6/java_tools_javac11_linux-v10.6.zip",
-        "https://github.com/bazelbuild/java_tools/releases/download/javac11_v10.6/java_tools_javac11_linux-v10.6.zip",
+        "https://mirror.bazel.build/bazel_java_tools/releases/javac11/v10.7/java_tools_javac11_linux-v10.7.zip",
+        "https://github.com/bazelbuild/java_tools/releases/download/javac11_v10.7/java_tools_javac11_linux-v10.7.zip",
     ],
 )
 
 http_archive(
     name = "remote_java_tools_darwin",
-    sha256 = "d15b05d2061382748f779dc566537ea567a46bcba6fa34b56d7cb6e6d668adab",
+    sha256 = "51a4cf424d3b26d6c42703cf2d80002f1489ba0d28c939519c3bb9c3d6ee3720",
     urls = [
-        "https://mirror.bazel.build/bazel_java_tools/releases/javac11/v10.6/java_tools_javac11_darwin-v10.6.zip",
-        "https://github.com/bazelbuild/java_tools/releases/download/javac11_v10.6/java_tools_javac11_darwin-v10.6.zip",
+        "https://mirror.bazel.build/bazel_java_tools/releases/javac11/v10.7/java_tools_javac11_darwin-v10.7.zip",
+        "https://github.com/bazelbuild/java_tools/releases/download/javac11_v10.7/java_tools_javac11_darwin-v10.7.zip",
     ],
 )
 
 # Zulu OpenJDK
 http_archive(
-    name = "openjdk15_linux_archive",
+    name = "openjdk17_linux_archive",
     build_file_content = """
 java_runtime(name = 'runtime', srcs =  glob(['**']), visibility = ['//visibility:public'])
 exports_files(["WORKSPACE"], visibility = ["//visibility:public"])
 """,
-    sha256 = "0f52b2d057d388ec7d659fc52e5d58634c39e05d511f48af650671adba9ca334",
-    strip_prefix = "zulu15.32.15-ca-jdk15.0.3-linux_x64",
-    urls = ["https://cdn.azul.com/zulu/bin/zulu15.32.15-ca-jdk15.0.3-linux_x64.tar.gz"],
+    sha256 = "9b8e4d1e47b02b9c2392462ee82988c189357471de3224c37173fa58e2b25112",
+    strip_prefix = "zulu17.30.15-ca-jdk17.0.1-linux_x64",
+    urls = ["https://cdn.azul.com/zulu/bin/zulu17.30.15-ca-jdk17.0.1-linux_x64.tar.gz"],
 )
 
 http_archive(
-    name = "openjdk15_darwin_archive",
+    name = "openjdk17_darwin_archive",
     build_file_content = """
 java_runtime(name = 'runtime', srcs =  glob(['**']), visibility = ['//visibility:public'])
 exports_files(["WORKSPACE"], visibility = ["//visibility:public"])
 """,
-    sha256 = "87df2e9adc1e27c2ffe9a1f8b88d0ba3eeb4cc81c77fc6a3a02788e22484d07b",
-    strip_prefix = "zulu15.32.15-ca-jdk15.0.3-macosx_x64",
-    urls = ["https://cdn.azul.com/zulu/bin/zulu15.32.15-ca-jdk15.0.3-macosx_x64.tar.gz"],
+    sha256 = "09d64fe576373b4314422811bc8402fbb7700176822b0e1e2bf2ff8a6cad10eb",
+    strip_prefix = "zulu17.30.15-ca-jdk17.0.1-macosx_x64",
+    urls = ["https://cdn.azul.com/zulu/bin/zulu17.30.15-ca-jdk17.0.1-macosx_x64.tar.gz"],
 )
