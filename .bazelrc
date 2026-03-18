@@ -1,10 +1,4 @@
-common --enable_platform_specific_config
-
-build --java_toolchain=//:toolchain_java17
-build --host_java_toolchain=//:toolchain_java17
-
-build:linux --javabase=@openjdk17_linux_archive//:runtime
-build:linux --host_javabase=@openjdk17_linux_archive//:runtime
-
-build:macos --javabase=@openjdk17_darwin_archive//:runtime
-build:macos --host_javabase=@openjdk17_darwin_archive//:runtime
+build --java_language_version=17
+build --java_runtime_version=remotejdk_17
+build --tool_java_language_version=17
+build --tool_java_runtime_version=remotejdk_17
